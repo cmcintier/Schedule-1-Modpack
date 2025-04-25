@@ -1,41 +1,40 @@
 {
 	"schemaVersion": 1,
-	"id": "schedule-1",
+	"id": "schedule1",
 	"version": "${version}",
 	"name": "Schedule 1",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A mod that adds the ability to grow, harvest, smoke, and pack weed",
 	"authors": [
-		"Me!"
+		"Chaney McIntier"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/schedule-1/icon.png",
+	"icon": "assets/schedule1/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"schedule1.schedule1.Schedule1"
 		],
-		"client": [
-			"schedule1.schedule1.Schedule1Client"
-		],
 		"fabric-datagen": [
 			"schedule1.schedule1.Schedule1DataGenerator"
+		],
+		"client": [
+			"schedule1.schedule1.Schedule1Client"
 		]
 	},
 	"mixins": [
-		"schedule-1.mixins.json",
-		{
-			"config": "schedule-1.client.mixins.json",
-			"environment": "client"
-		}
+		"schedule1.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.13",
-		"minecraft": "~1.21.4",
+		"minecraft": "~1.21.1",
 		"java": ">=21",
 		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
 	}
 }
