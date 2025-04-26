@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "schedule1:grandaddy_purple"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+
+  "result": {
+    "count": 1,
+    "id": "schedule1:grandaddy_purple_block"
+  }
+}

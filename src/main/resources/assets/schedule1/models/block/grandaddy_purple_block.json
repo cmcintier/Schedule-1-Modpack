@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "schedule1:block/grandaddy_purple"
+  }
+}

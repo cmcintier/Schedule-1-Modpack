@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import schedule1.schedule1.block.ModBlocks;
 import schedule1.schedule1.item.ModItems;
 
 public class Schedule1 implements ModInitializer {
@@ -13,5 +14,6 @@ public class Schedule1 implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 	}
 }

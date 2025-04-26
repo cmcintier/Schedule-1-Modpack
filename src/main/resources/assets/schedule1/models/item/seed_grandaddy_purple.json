@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "schedule1:item/seed_grandaddy_purple"
+  }
+}
