@@ -1,8 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "item/grandaddy_purple",
-		"item": "item/grandaddy_purple"
+		"0": "schedule1:block/grandaddy_purple"
 	},
 	"elements": [
 		{
@@ -266,6 +265,33 @@
 			}
 		}
 	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 7, 0]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 7, 0]
+		},
+		"firstperson_righthand": {
+			"rotation": [-12.5, 0, 16.25],
+			"translation": [-3, 7.75, 0]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-20.25, 0, 16.25],
+			"translation": [-3.75, 8.25, 0]
+		},
+		"ground": {
+			"translation": [0, 4.2, 0]
+		},
+		"gui": {
+			"rotation": [0, 0, 14.75],
+			"translation": [-2.5, 10.75, 0],
+			"scale": [2, 2, 2]
+		},
+		"fixed": {
+			"translation": [0, 6, 0]
+		}
+	},
 	"groups": [
 		{
 			"name": "Grandaddy Purple",

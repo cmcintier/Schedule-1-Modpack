@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "schedule1:item/grandaddy_purple"
-  }
+  "parent": "schedule1:block/grandaddy_purple"
 }
