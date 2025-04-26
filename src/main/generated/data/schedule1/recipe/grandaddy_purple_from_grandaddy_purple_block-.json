@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "schedule1:grandaddy_purple_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "schedule1:grandaddy_purple"
+  }
+}

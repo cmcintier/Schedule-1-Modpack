@@ -1,0 +1,7 @@
+// 1.21.1	2025-04-26T11:07:23.250527	Schedule 1/Model Definitions
+1b3f790e9700f172cf614bd4e2817e9d8aba21bf assets\schedule1\models\block\grandaddy_purple_crop.json
+33e54ec39effe5fcba06b282af54c0ed7ecadc04 assets\schedule1\models\block\grandaddy_purple_block.json
+59b27519b49583554d783d4c5feabdf58aea5498 assets\schedule1\blockstates\grandaddy_purple_block.json
+89d20b5b4a07ce772ed61e6d40ec083587cd7a76 assets\schedule1\models\item\grandaddy_purple_block.json
+cd9ae6a12fbc24fd633c7a80cefa58487a61e6bc assets\schedule1\blockstates\grandaddy_purple_crop.json
+80509040d77a62a948e2b101810c08f297a10fb4 assets\schedule1\models\item\seed_grandaddy_purple.json
