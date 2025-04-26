@@ -13,8 +13,10 @@ import schedule1.schedule1.block.ModBlocks;
 
 public class ModItems {
     public static final Item GRANDADDY_PURPLE = registerItem("grandaddy_purple", new Item(new Item.Settings()));
+
     public static final Item SEED_GRANDADDY_PURPLE = registerItem("seed_grandaddy_purple",
             new AliasedBlockItem(ModBlocks.GRANDADDY_PURPLE_CROP, new Item.Settings()));
+
 
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, Identifier.of(Schedule1.MOD_ID, name), item);

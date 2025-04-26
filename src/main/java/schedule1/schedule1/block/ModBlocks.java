@@ -18,7 +18,7 @@ import schedule1.schedule1.block.custom.GrandaddyPurpleCropBlock;
 public class ModBlocks {
 
     public static final Block GRANDADDY_PURPLE_BLOCK = registerBlock("grandaddy_purple_block",
-            new Block(AbstractBlock.Settings.create().strength(1f).sounds(BlockSoundGroup.GRASS)));
+            new Block(AbstractBlock.Settings.create().strength(4f).sounds(BlockSoundGroup.GRASS)));
 
     public static final Block GRANDADDY_PURPLE_CROP = registerBlockWithoutBlockItem("grandaddy_purple_crop",
             new GrandaddyPurpleCropBlock(AbstractBlock.Settings.create().noCollision()
