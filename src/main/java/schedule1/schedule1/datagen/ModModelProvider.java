@@ -6,6 +6,7 @@ import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 import schedule1.schedule1.block.ModBlocks;
+import schedule1.schedule1.block.custom.GrandaddyPurpleCropBlock;
 import schedule1.schedule1.item.ModItems;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -16,13 +17,15 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GRANDADDY_PURPLE_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GRANDADDY_PURPLE_CROP);
+
+        blockStateModelGenerator.registerCrop(ModBlocks.GRANDADDY_PURPLE_CROP, GrandaddyPurpleCropBlock.AGE, 0, 1, 2, 3, 4);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ModItems.SEED_GRANDADDY_PURPLE, Models.GENERATED);
-
+        //itemModelGenerator.register(ModItems.SEED_GRANDADDY_PURPLE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PLASTIC_BAGGY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.GLASS_JAR, Models.GENERATED);
 
     }
 }

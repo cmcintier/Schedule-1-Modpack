@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
-      "model": "schedule1:block/grandaddy_purple_crop"
+    "age=0": {
+      "model": "schedule1:block/grandaddy_purple_crop_stage0"
+    },
+    "age=1": {
+      "model": "schedule1:block/grandaddy_purple_crop_stage1"
+    },
+    "age=2": {
+      "model": "schedule1:block/grandaddy_purple_crop_stage2"
+    },
+    "age=3": {
+      "model": "schedule1:block/grandaddy_purple_crop_stage3"
+    },
+    "age=4": {
+      "model": "schedule1:block/grandaddy_purple_crop_stage4"
     }
   }
 }

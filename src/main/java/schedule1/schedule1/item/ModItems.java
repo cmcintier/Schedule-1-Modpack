@@ -13,6 +13,8 @@ import schedule1.schedule1.block.ModBlocks;
 
 public class ModItems {
     public static final Item GRANDADDY_PURPLE = registerItem("grandaddy_purple", new Item(new Item.Settings()));
+    public static final Item PLASTIC_BAGGY = registerItem("plastic_baggy", new Item(new Item.Settings()));
+    public static final Item GLASS_JAR = registerItem("glass_jar", new Item(new Item.Settings()));
 
     public static final Item SEED_GRANDADDY_PURPLE = registerItem("seed_grandaddy_purple",
             new AliasedBlockItem(ModBlocks.GRANDADDY_PURPLE_CROP, new Item.Settings()));
@@ -28,6 +30,8 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(GRANDADDY_PURPLE);
             entries.add(SEED_GRANDADDY_PURPLE);
+            entries.add(PLASTIC_BAGGY);
+            entries.add(GLASS_JAR);
         });
     }
 }
