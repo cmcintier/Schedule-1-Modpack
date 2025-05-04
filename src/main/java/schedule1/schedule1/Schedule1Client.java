@@ -9,5 +9,6 @@ public class Schedule1Client implements ClientModInitializer {
     @Override
     public void onInitializeClient(){
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GRANDADDY_PURPLE_CROP, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GRANDADDY_PURPLE_BUSH, RenderLayer.getCutout());
     }
 }

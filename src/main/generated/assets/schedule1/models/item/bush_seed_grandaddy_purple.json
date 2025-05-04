@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "schedule1:item/bush_seed_grandaddy_purple"
+  }
+}

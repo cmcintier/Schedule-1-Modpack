@@ -1,10 +1,17 @@
 {
   "item.schedule1.grandaddy_purple": "Grandaddy Purple",
   "item.schedule1.seed_grandaddy_purple": "Grandaddy Purple Seed",
+  "item.schedule1.bush_seed_grandaddy_purple": "Grandaddy Purple Bush Seed",
   "item.schedule1.glass_jar": "Glass Jar",
   "item.schedule1.plastic_baggy": "Plastic Baggy",
+  "item.schedule1.empty_grinder": "Empty Grinder",
+  "item.schedule1.full_grinder": "Full Grinder",
+  "item.schedule1.harvester": "Harvester",
 
   "block.schedule1.grandaddy_purple_block": "Grandaddy Purple Block",
+  "block.schedule1.grandaddy_purple_bush": "Grandaddy Purple Bush",
 
-  "effect.schedule1.high": "High"
+  "effect.schedule1.high": "High",
+
+  "itemgroup.schedule1.weed_items": "Weed"
 }

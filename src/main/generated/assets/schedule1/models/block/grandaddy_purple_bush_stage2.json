@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "schedule1:block/grandaddy_purple_bush_stage2"
+  }
+}

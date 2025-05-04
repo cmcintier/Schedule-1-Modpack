@@ -3,6 +3,7 @@ package schedule1.schedule1.block;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
@@ -13,16 +14,26 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import schedule1.schedule1.Schedule1;
+import schedule1.schedule1.block.custom.GrandaddyPurpleBushBlock;
 import schedule1.schedule1.block.custom.GrandaddyPurpleCropBlock;
 
 public class ModBlocks {
 
     public static final Block GRANDADDY_PURPLE_BLOCK = registerBlock("grandaddy_purple_block",
-            new Block(AbstractBlock.Settings.create().strength(4f).sounds(BlockSoundGroup.GRASS)));
+            new Block(AbstractBlock.Settings.create().strength(2f).sounds(BlockSoundGroup.GRASS)));
 
     public static final Block GRANDADDY_PURPLE_CROP = registerBlockWithoutBlockItem("grandaddy_purple_crop",
             new GrandaddyPurpleCropBlock(AbstractBlock.Settings.create().noCollision()
                     .ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP).pistonBehavior(PistonBehavior.DESTROY).mapColor(MapColor.DARK_GREEN)));
+
+    public static final Block GRANDADDY_PURPLE_BUSH = registerBlockWithoutBlockItem("grandaddy_purple_bush",
+            new GrandaddyPurpleBushBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.DARK_GREEN)
+                    .ticksRandomly()
+                    .noCollision()
+                    .sounds(BlockSoundGroup.SWEET_BERRY_BUSH)
+                    .pistonBehavior(PistonBehavior.DESTROY)));
+
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);

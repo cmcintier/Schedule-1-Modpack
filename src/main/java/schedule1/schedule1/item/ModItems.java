@@ -15,10 +15,15 @@ public class ModItems {
     public static final Item GRANDADDY_PURPLE = registerItem("grandaddy_purple", new Item(new Item.Settings()));
     public static final Item PLASTIC_BAGGY = registerItem("plastic_baggy", new Item(new Item.Settings()));
     public static final Item GLASS_JAR = registerItem("glass_jar", new Item(new Item.Settings()));
+    public static final Item EMPTY_GRINDER = registerItem("empty_grinder", new Item(new Item.Settings()));
+    public static final Item FULL_GRINDER = registerItem("full_grinder", new Item(new Item.Settings()));
+    public static final Item HARVESTER = registerItem("harvester", new HarvesterItem(new Item.Settings().maxDamage(32)));
 
     public static final Item SEED_GRANDADDY_PURPLE = registerItem("seed_grandaddy_purple",
             new AliasedBlockItem(ModBlocks.GRANDADDY_PURPLE_CROP, new Item.Settings()));
 
+    public static final Item BUSH_SEED_GRANDADDY_PURPLE = registerItem("bush_seed_grandaddy_purple",
+            new AliasedBlockItem(ModBlocks.GRANDADDY_PURPLE_BUSH, new Item.Settings()));
 
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, Identifier.of(Schedule1.MOD_ID, name), item);
@@ -28,10 +33,7 @@ public class ModItems {
         Schedule1.LOGGER.info("Registering Mod Items for " + Schedule1.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
-            entries.add(GRANDADDY_PURPLE);
-            entries.add(SEED_GRANDADDY_PURPLE);
-            entries.add(PLASTIC_BAGGY);
-            entries.add(GLASS_JAR);
+
         });
     }
 }
