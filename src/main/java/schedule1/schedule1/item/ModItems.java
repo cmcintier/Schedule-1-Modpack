@@ -9,18 +9,21 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import schedule1.schedule1.Schedule1;
 import schedule1.schedule1.block.ModBlocks;
+import schedule1.schedule1.item.custom.BluntItem;
+import schedule1.schedule1.item.custom.BongItem;
+import schedule1.schedule1.item.custom.GrinderItem;
+import schedule1.schedule1.item.custom.HarvesterItem;
 
 
 public class ModItems {
     public static final Item GRANDADDY_PURPLE = registerItem("grandaddy_purple", new Item(new Item.Settings()));
     public static final Item PLASTIC_BAGGY = registerItem("plastic_baggy", new Item(new Item.Settings()));
     public static final Item GLASS_JAR = registerItem("glass_jar", new Item(new Item.Settings()));
-    public static final Item EMPTY_GRINDER = registerItem("empty_grinder", new Item(new Item.Settings()));
-    public static final Item FULL_GRINDER = registerItem("full_grinder", new Item(new Item.Settings()));
+    public static final Item GRINDER = registerItem("grinder", new GrinderItem(new Item.Settings()));
     public static final Item HARVESTER = registerItem("harvester", new HarvesterItem(new Item.Settings().maxDamage(32)));
-
-    public static final Item SEED_GRANDADDY_PURPLE = registerItem("seed_grandaddy_purple",
-            new AliasedBlockItem(ModBlocks.GRANDADDY_PURPLE_CROP, new Item.Settings()));
+    public static final Item BLUNT = registerItem("blunt", new BluntItem(new Item.Settings()));
+    public static final Item BONG = registerItem("bong", new BongItem(new Item.Settings()));
+    public static final Item GRANDADDY_PURPLE_GROUNDS = registerItem("grandaddy_purple_grounds", new Item(new Item.Settings()));
 
     public static final Item BUSH_SEED_GRANDADDY_PURPLE = registerItem("bush_seed_grandaddy_purple",
             new AliasedBlockItem(ModBlocks.GRANDADDY_PURPLE_BUSH, new Item.Settings()));

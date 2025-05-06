@@ -1,7 +1,6 @@
 package schedule1.schedule1.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.impl.itemgroup.FabricItemGroupBuilderImpl;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -17,13 +16,16 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemgroup.schedule1.weed_items"))
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.GRANDADDY_PURPLE);
-                        entries.add(ModItems.SEED_GRANDADDY_PURPLE);
                         entries.add(ModItems.PLASTIC_BAGGY);
                         entries.add(ModItems.GLASS_JAR);
-                        entries.add(ModItems.EMPTY_GRINDER);
-                        entries.add(ModItems.FULL_GRINDER);
+//                        entries.add(ModItems.EMPTY_GRINDER);
+//                        entries.add(ModItems.FULL_GRINDER);
+                        entries.add(ModItems.GRINDER);
                         entries.add(ModItems.BUSH_SEED_GRANDADDY_PURPLE);
                         entries.add(ModItems.HARVESTER);
+                        entries.add(ModItems.BLUNT);
+                        entries.add(ModItems.BONG);
+                        entries.add(ModItems.GRANDADDY_PURPLE_GROUNDS);
                     })
                     .build());
 

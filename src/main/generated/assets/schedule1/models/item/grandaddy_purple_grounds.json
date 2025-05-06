@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "schedule1:item/empty_grinder"
+    "layer0": "schedule1:item/grandaddy_purple_grounds"
   }
 }

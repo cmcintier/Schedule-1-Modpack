@@ -7,11 +7,17 @@
   "item.schedule1.empty_grinder": "Empty Grinder",
   "item.schedule1.full_grinder": "Full Grinder",
   "item.schedule1.harvester": "Harvester",
+  "item.schedule1.blunt": "Blunt",
+  "item.schedule1.bong": "Bong",
+  "item.schedule1.grandaddy_purple_grounds": "Grandaddy Purple Grounds",
 
   "block.schedule1.grandaddy_purple_block": "Grandaddy Purple Block",
   "block.schedule1.grandaddy_purple_bush": "Grandaddy Purple Bush",
 
   "effect.schedule1.high": "High",
 
-  "itemgroup.schedule1.weed_items": "Weed"
+  "itemgroup.schedule1.weed_items": "Weed",
+
+  "tooltip.schedule1.grinder": "Grinder... Hold Shift for more info.",
+  "tooltip.schedule1.grinder.shift_down": "Grinder... get pranked there was no more info"
 }
