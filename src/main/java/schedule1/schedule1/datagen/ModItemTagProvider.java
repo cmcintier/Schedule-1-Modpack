@@ -18,6 +18,18 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         getOrCreateTagBuilder(ModTags.Items.SMOKEABLE_ITEMS)
+                .add(ModItems.BONG)
+                .add(ModItems.BLUNT);
+        getOrCreateTagBuilder(ModTags.Items.WEED_STRAINS)
                 .add(ModItems.GRANDADDY_PURPLE);
+        getOrCreateTagBuilder(ModTags.Items.GROUNDS)
+                .add(ModItems.GRANDADDY_PURPLE_GROUNDS);
+        getOrCreateTagBuilder(ModTags.Items.PACKING_STATION_ITEMS)
+                .add(ModItems.GRANDADDY_PURPLE)
+                .add(ModItems.GRANDADDY_PURPLE_GROUNDS);
+        getOrCreateTagBuilder(ModTags.Items.PACKAGING_ITEMS)
+                .add(ModItems.PLASTIC_BAGGY)
+                .add(ModItems.GLASS_JAR)
+                .add(ModItems.PREROLL);
     }
 }

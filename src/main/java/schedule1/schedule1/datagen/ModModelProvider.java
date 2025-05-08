@@ -17,6 +17,7 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GRANDADDY_PURPLE_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PACKING_STATION_BLOCK);
 
         blockStateModelGenerator.registerTintableCrossBlockStateWithStages(ModBlocks.GRANDADDY_PURPLE_BUSH, BlockStateModelGenerator.TintType.NOT_TINTED,
                 GrandaddyPurpleBushBlock.AGE, 0, 1, 2, 3, 4);
@@ -33,5 +34,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.BLUNT, Models.GENERATED);
         itemModelGenerator.register(ModItems.BONG, Models.GENERATED);
         itemModelGenerator.register(ModItems.GRANDADDY_PURPLE_GROUNDS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PREROLL, Models.GENERATED);
     }
 }

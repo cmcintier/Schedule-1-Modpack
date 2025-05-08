@@ -14,11 +14,15 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import schedule1.schedule1.Schedule1;
 import schedule1.schedule1.block.custom.GrandaddyPurpleBushBlock;
+import schedule1.schedule1.block.custom.PackingStationBlock;
 
 public class ModBlocks {
 
     public static final Block GRANDADDY_PURPLE_BLOCK = registerBlock("grandaddy_purple_block",
             new Block(AbstractBlock.Settings.create().strength(2f).sounds(BlockSoundGroup.GRASS)));
+
+    public static final Block PACKING_STATION_BLOCK = registerBlock("packing_station_block",
+            new PackingStationBlock(AbstractBlock.Settings.create().nonOpaque()));
 
     public static final Block GRANDADDY_PURPLE_BUSH = registerBlockWithoutBlockItem("grandaddy_purple_bush",
             new GrandaddyPurpleBushBlock(AbstractBlock.Settings.create()

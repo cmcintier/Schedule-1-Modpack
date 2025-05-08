@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
+import schedule1.schedule1.effect.ModEffects;
 
 public class BluntItem extends Item {
     public BluntItem(Settings settings) {
@@ -16,6 +17,7 @@ public class BluntItem extends Item {
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
         if(!world.isClient()){
+            user.getStatusEffect(ModEffects.HIGH);
             user.getMainHandStack().damage(1, ((ServerWorld) world), ((ServerPlayerEntity) user),
                     item -> user.sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
         }

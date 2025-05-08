@@ -8,6 +8,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import schedule1.schedule1.Schedule1;
+import schedule1.schedule1.block.ModBlocks;
 
 public class ModItemGroups {
     public static final ItemGroup WEED_ITEMS_GROUP = Registry.register(Registries.ITEM_GROUP, Identifier.of(Schedule1.MOD_ID, "weed_items"),
@@ -26,6 +27,10 @@ public class ModItemGroups {
                         entries.add(ModItems.BLUNT);
                         entries.add(ModItems.BONG);
                         entries.add(ModItems.GRANDADDY_PURPLE_GROUNDS);
+                        entries.add(ModItems.PREROLL);
+
+                        entries.add(ModBlocks.GRANDADDY_PURPLE_BLOCK);
+                        entries.add(ModBlocks.PACKING_STATION_BLOCK);
                     })
                     .build());
 

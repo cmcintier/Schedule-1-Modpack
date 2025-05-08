@@ -10,6 +10,7 @@
   "item.schedule1.blunt": "Blunt",
   "item.schedule1.bong": "Bong",
   "item.schedule1.grandaddy_purple_grounds": "Grandaddy Purple Grounds",
+  "item.schedule1.preroll": "Preroll",
 
   "block.schedule1.grandaddy_purple_block": "Grandaddy Purple Block",
   "block.schedule1.grandaddy_purple_bush": "Grandaddy Purple Bush",
@@ -18,6 +19,13 @@
 
   "itemgroup.schedule1.weed_items": "Weed",
 
-  "tooltip.schedule1.grinder": "Grinder... Hold Shift for more info.",
-  "tooltip.schedule1.grinder.shift_down": "Grinder... get pranked there was no more info"
+  "tooltip.schedule1.grinder.line1": "Grinder",
+  "tooltip.schedule1.grinder.line2": "Hold Shift for more info...",
+  "tooltip.schedule1.grinder.shift_down.line1": "Grinder",
+  "tooltip.schedule1.grinder.shift_down.line2": "Get pranked there was no more info",
+
+  "tooltip.schedule1.grandaddy_purple.line1": "Grandaddy Purple",
+  "tooltip.schedule1.grandaddy_purple.line2": "Hold, Shift for more info...",
+  "tooltip.schedule1.grandaddy_purple.shift_down.line1": "Grandaddy Purple"
+
 }

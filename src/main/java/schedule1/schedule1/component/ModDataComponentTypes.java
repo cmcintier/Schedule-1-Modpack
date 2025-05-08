@@ -15,19 +15,19 @@ public class ModDataComponentTypes {
     public static final ComponentType<BlockPos> COORDINATES =
             register("coordinates", builder -> builder.codec(BlockPos.CODEC));
 
-    public static final ComponentType<Integer> CLICK_COUNT_COMPONENT = Registry.register(
+    public static final ComponentType<Integer> GRIND_STATE = Registry.register(
             Registries.DATA_COMPONENT_TYPE,
             Identifier.of(Schedule1.MOD_ID, "click_count"),
             ComponentType.<Integer>builder().codec(Codec.INT).build()
     );
 
-    public static final ComponentType<String> CONTENTS_COMPONENT = Registry.register(
+    public static final ComponentType<String> STRAIN = Registry.register(
             Registries.DATA_COMPONENT_TYPE,
             Identifier.of(Schedule1.MOD_ID, "contents"),
             ComponentType.<String>builder().codec(Codec.STRING).build()
     );
 
-    //Strain component
+
 
     private static <T>ComponentType<T> register(String name, UnaryOperator<ComponentType.Builder<T>> builderOperator){
         return Registry.register(Registries.DATA_COMPONENT_TYPE, Identifier.of(Schedule1.MOD_ID, name),

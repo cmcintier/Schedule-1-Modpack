@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "schedule1:block/packing_station_block"
+    }
+  }
+}
