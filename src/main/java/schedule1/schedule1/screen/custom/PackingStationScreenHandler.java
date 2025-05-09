@@ -3,51 +3,66 @@ package schedule1.schedule1.screen.custom;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.CraftingInventory;
-import net.minecraft.inventory.CraftingResultInventory;
 import net.minecraft.inventory.Inventory;
-import net.minecraft.inventory.RecipeInputInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.tag.TagKey;
+import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.slot.CraftingResultSlot;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.util.math.BlockPos;
+import schedule1.schedule1.block.entity.custom.PackingStationBlockEntity;
 import schedule1.schedule1.screen.ModScreenHandlers;
-import schedule1.schedule1.util.ModTags;
+
 
 
 
 public class PackingStationScreenHandler extends ScreenHandler {
-    private final Inventory inventory;
-    private final RecipeInputInventory input = new CraftingInventory(this, 2, 1);
-    private final CraftingResultInventory result = new CraftingResultInventory();
 
-    public PackingStationScreenHandler(int syncId, PlayerInventory playerInventory, BlockPos blockPos) {
-        this(syncId, playerInventory, playerInventory.player.getWorld().getBlockEntity(blockPos));
+    private final Inventory inventory;
+    private final PropertyDelegate propertyDelegate;
+    public final PackingStationBlockEntity blockEntity;
+
+    public PackingStationScreenHandler(int syncId, PlayerInventory inventory, BlockPos pos) {
+        this(syncId, inventory, inventory.player.getWorld().getBlockEntity(pos), new ArrayPropertyDelegate(2));
     }
 
-    public PackingStationScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity) {
+    public PackingStationScreenHandler(int syncId, PlayerInventory playerInventory,
+                                      BlockEntity blockEntity, PropertyDelegate arrayPropertyDelegate) {
         super(ModScreenHandlers.PACKING_STATION_SCREEN_HANDLER, syncId);
         this.inventory = ((Inventory) blockEntity);
+        this.blockEntity = ((PackingStationBlockEntity) blockEntity);
+        this.propertyDelegate = arrayPropertyDelegate;
 
-        this.addSlot(new PaymentSlot(inventory, 0, 33, 35, ModTags.Items.PACKING_STATION_ITEMS));
-        this.addSlot(new PaymentSlot(inventory, 1, 59, 35, ModTags.Items.PACKAGING_ITEMS));
-        this.addSlot(new CraftingResultSlot(playerInventory.player, this.input, this.result, 2, 116, 35));
+        this.addSlot(new Slot(inventory, 0, 33, 34));
+        this.addSlot(new Slot(inventory, 1, 59, 34));
+        this.addSlot(new Slot(inventory, 2, 116, 34));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
+
+        addProperties(arrayPropertyDelegate);
+    }
+
+    public boolean isCrafting() {
+        return propertyDelegate.get(0) > 0;
+    }
+
+    public int getScaledArrowProgress() {
+        int progress = this.propertyDelegate.get(0);
+        int maxProgress = this.propertyDelegate.get(1); // Max Progress
+        int arrowPixelSize = 24; // This is the width in pixels of your arrow
+
+        return maxProgress != 0 && progress != 0 ? progress * arrowPixelSize / maxProgress : 0;
     }
 
     @Override
-    public ItemStack quickMove(PlayerEntity player, int inv) {
+    public ItemStack quickMove(PlayerEntity player, int invSlot) {
         ItemStack newStack = ItemStack.EMPTY;
-        Slot slot = this.slots.get(inv);
+        Slot slot = this.slots.get(invSlot);
         if (slot != null && slot.hasStack()) {
             ItemStack originalStack = slot.getStack();
             newStack = originalStack.copy();
-            if (inv < this.inventory.size()) {
+            if (invSlot < this.inventory.size()) {
                 if (!this.insertItem(originalStack, this.inventory.size(), this.slots.size(), true)) {
                     return ItemStack.EMPTY;
                 }
@@ -81,24 +96,5 @@ public class PackingStationScreenHandler extends ScreenHandler {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
-    }
-}
-
-class PaymentSlot extends Slot {
-    private final TagKey<Item> tagKey;
-
-    public PaymentSlot(final Inventory inventory, final int index, final int x, final int y, TagKey<Item> tagKey) {
-        super(inventory, index, x, y);
-        this.tagKey = tagKey;
-    }
-
-    @Override
-    public boolean canInsert(ItemStack stack) {
-        return stack.isIn(this.tagKey);
-    }
-
-    @Override
-    public int getMaxItemCount() {
-        return 1;
     }
 }

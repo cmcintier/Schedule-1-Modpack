@@ -12,6 +12,8 @@ import schedule1.schedule1.Schedule1;
 public class PackingStationScreen extends HandledScreen<PackingStationScreenHandler> {
     public static final Identifier GUI_TEXTURE =
             Identifier.of(Schedule1.MOD_ID, "textures/gui/packing_station/packing_station_gui.png");
+    private static final Identifier ARROW_TEXTURE =
+            Identifier.of(Schedule1.MOD_ID, "textures/gui/arrow_progress.png");
 
     public PackingStationScreen(PackingStationScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
@@ -27,6 +29,14 @@ public class PackingStationScreen extends HandledScreen<PackingStationScreenHand
         int y = (height - backgroundHeight) / 2;
 
         context.drawTexture(GUI_TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
+        renderProgressArrow(context, x, y);
+    }
+
+    private void renderProgressArrow(DrawContext context, int x, int y) {
+        if(handler.isCrafting()) {
+            context.drawTexture(ARROW_TEXTURE, x + 73, y + 35, 0, 0,
+                    handler.getScaledArrowProgress(), 16, 24, 16);
+        }
     }
 
     @Override

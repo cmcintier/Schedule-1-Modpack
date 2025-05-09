@@ -27,8 +27,6 @@ public class ModDataComponentTypes {
             ComponentType.<String>builder().codec(Codec.STRING).build()
     );
 
-
-
     private static <T>ComponentType<T> register(String name, UnaryOperator<ComponentType.Builder<T>> builderOperator){
         return Registry.register(Registries.DATA_COMPONENT_TYPE, Identifier.of(Schedule1.MOD_ID, name),
                 builderOperator.apply(ComponentType.builder()).build());
