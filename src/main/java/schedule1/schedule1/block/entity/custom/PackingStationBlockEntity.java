@@ -6,12 +6,12 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
+import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
@@ -23,14 +23,18 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import schedule1.schedule1.block.entity.ImplementedInventory;
 import schedule1.schedule1.block.entity.ModBlockEntities;
-import schedule1.schedule1.item.ModItems;
+import schedule1.schedule1.recipe.ModRecipes;
+import schedule1.schedule1.recipe.PackingStationRecipe;
+import schedule1.schedule1.recipe.PackingStationRecipeInput;
 import schedule1.schedule1.screen.custom.PackingStationScreenHandler;
+
+import java.util.Optional;
 
 public class PackingStationBlockEntity extends BlockEntity implements ImplementedInventory, ExtendedScreenHandlerFactory<BlockPos> {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
 
     private static final int PRODUCT_INPUT_SLOT = 0;
-    private static final int PACKING_INPUT_SLOT = 0;
+    private static final int PACKAGING_INPUT_SLOT = 1;
     private static final int OUTPUT_SLOT = 2;
 
     protected final PropertyDelegate propertyDelegate;
@@ -101,6 +105,7 @@ public class PackingStationBlockEntity extends BlockEntity implements Implemente
         maxProgress = nbt.getInt("packing_station.max_progress");
         super.readNbt(nbt, registryLookup);
     }
+
     public void tick(World world, BlockPos pos, BlockState state) {
         if(hasRecipe()) {
             increaseCraftingProgress();
@@ -121,8 +126,9 @@ public class PackingStationBlockEntity extends BlockEntity implements Implemente
     }
 
     private void craftItem() {
-        ItemStack output = new ItemStack(ModItems.BLUNT, 1);
+        Optional<RecipeEntry<PackingStationRecipe>> recipe = getCurrentRecipe();
 
+        ItemStack output = recipe.get().value().output();
         this.removeStack(PRODUCT_INPUT_SLOT, 3);
         this.setStack(OUTPUT_SLOT, new ItemStack(output.getItem(),
                 this.getStack(OUTPUT_SLOT).getCount() + output.getCount()));
@@ -137,11 +143,17 @@ public class PackingStationBlockEntity extends BlockEntity implements Implemente
     }
 
     private boolean hasRecipe() {
-        Item input = ModItems.GRANDADDY_PURPLE_GROUNDS;
-        ItemStack output = new ItemStack(ModItems.BLUNT, 1);
+        Optional<RecipeEntry<PackingStationRecipe>> recipe = getCurrentRecipe();
+        if(recipe.isEmpty()){
+            return false;
+        }
+        ItemStack output = recipe.get().value().output();
+        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+    }
 
-        return this.getStack(PRODUCT_INPUT_SLOT).isOf(input) && this.getStack(PRODUCT_INPUT_SLOT).getCount() >=3 &&
-                canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+    private Optional<RecipeEntry<PackingStationRecipe>> getCurrentRecipe() {
+        return this.getWorld().getRecipeManager()
+                .getFirstMatch(ModRecipes.PACKING_STATION_TYPE, new PackingStationRecipeInput(inventory.get(PRODUCT_INPUT_SLOT), inventory.get(PACKAGING_INPUT_SLOT)), this.getWorld());
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {

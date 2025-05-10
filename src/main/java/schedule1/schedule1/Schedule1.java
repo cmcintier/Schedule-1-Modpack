@@ -10,6 +10,7 @@ import schedule1.schedule1.component.ModDataComponentTypes;
 import schedule1.schedule1.effect.ModEffects;
 import schedule1.schedule1.item.ModItemGroups;
 import schedule1.schedule1.item.ModItems;
+import schedule1.schedule1.recipe.ModRecipes;
 import schedule1.schedule1.screen.ModScreenHandlers;
 
 public class Schedule1 implements ModInitializer {
@@ -25,5 +26,6 @@ public class Schedule1 implements ModInitializer {
 		ModDataComponentTypes.registerModComponents();
 		ModEffects.registerEffects();
 		ModScreenHandlers.registerScreenHandlers();
+		ModRecipes.registerRecipes();
 	}
 }

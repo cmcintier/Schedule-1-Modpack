@@ -13,7 +13,7 @@ public class PackingStationScreen extends HandledScreen<PackingStationScreenHand
     public static final Identifier GUI_TEXTURE =
             Identifier.of(Schedule1.MOD_ID, "textures/gui/packing_station/packing_station_gui.png");
     private static final Identifier ARROW_TEXTURE =
-            Identifier.of(Schedule1.MOD_ID, "textures/gui/arrow_progress.png");
+            Identifier.of(Schedule1.MOD_ID, "textures/gui/packing_arrow_progress.png");
 
     public PackingStationScreen(PackingStationScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
@@ -26,10 +26,10 @@ public class PackingStationScreen extends HandledScreen<PackingStationScreenHand
         RenderSystem.setShaderTexture(0, GUI_TEXTURE);
 
         int x = (width - backgroundWidth) / 2;
-        int y = (height - backgroundHeight) / 2;
+        int y = (height - backgroundHeight) / 2 ;
 
         context.drawTexture(GUI_TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
-        renderProgressArrow(context, x, y);
+        renderProgressArrow(context, x + 10, y);
     }
 
     private void renderProgressArrow(DrawContext context, int x, int y) {

@@ -2,6 +2,7 @@ package schedule1.schedule1.component;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.component.ComponentType;
+import net.minecraft.component.type.FoodComponent;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -26,6 +27,7 @@ public class ModDataComponentTypes {
             Identifier.of(Schedule1.MOD_ID, "contents"),
             ComponentType.<String>builder().codec(Codec.STRING).build()
     );
+
 
     private static <T>ComponentType<T> register(String name, UnaryOperator<ComponentType.Builder<T>> builderOperator){
         return Registry.register(Registries.DATA_COMPONENT_TYPE, Identifier.of(Schedule1.MOD_ID, name),

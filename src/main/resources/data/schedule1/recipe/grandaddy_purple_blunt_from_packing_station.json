@@ -1,0 +1,13 @@
+{
+  "type": "schedule1:packing_station",
+  "category": "misc",
+  "ingredient1": {
+    "item": "schedule1:grandaddy_purple_grounds"
+  },
+  "ingredient2": {
+    "item": "schedule1:preroll"
+  },
+  "result": {
+    "id": "schedule1:blunt"
+  }
+}
