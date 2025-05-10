@@ -6,8 +6,10 @@ import net.minecraft.component.type.FoodComponent;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.dynamic.Codecs;
 import net.minecraft.util.math.BlockPos;
 import schedule1.schedule1.Schedule1;
+import schedule1.schedule1.component.custom.ConsumableDrugComponent;
 
 import java.util.function.UnaryOperator;
 
@@ -28,6 +30,11 @@ public class ModDataComponentTypes {
             ComponentType.<String>builder().codec(Codec.STRING).build()
     );
 
+    public static final ComponentType<ConsumableDrugComponent> CONSUMABLE_DRUG = Registry.register(
+            Registries.DATA_COMPONENT_TYPE,
+            Identifier.of(Schedule1.MOD_ID, "consumable_drug"),
+            ComponentType.<ConsumableDrugComponent>builder().codec(ConsumableDrugComponent.CODEC).build()
+    );
 
     private static <T>ComponentType<T> register(String name, UnaryOperator<ComponentType.Builder<T>> builderOperator){
         return Registry.register(Registries.DATA_COMPONENT_TYPE, Identifier.of(Schedule1.MOD_ID, name),

@@ -1,6 +1,7 @@
 package schedule1.schedule1.item;
 
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -12,9 +13,13 @@ import net.minecraft.util.Identifier;
 import schedule1.schedule1.Schedule1;
 import schedule1.schedule1.block.ModBlocks;
 import schedule1.schedule1.component.ModDataComponentTypes;
+
+import schedule1.schedule1.component.custom.ConsumableDrugComponents;
 import schedule1.schedule1.item.custom.*;
 
 import java.util.List;
+
+import static schedule1.schedule1.component.custom.ConsumableDrugComponents.GRANDADDY_PURPLE_BLUNT;
 
 
 public class ModItems {
@@ -32,13 +37,18 @@ public class ModItems {
                     super.appendTooltip(stack, context, tooltip, type);
                 }
             });
+
     public static final Item PLASTIC_BAGGY = registerItem("plastic_baggy", new Item(new Item.Settings()));
     public static final Item GLASS_JAR = registerItem("glass_jar", new Item(new Item.Settings()));
     public static final Item GRINDER = registerItem("grinder", new GrinderItem(new Item.Settings()
             .component(ModDataComponentTypes.STRAIN, "")));
+
     public static final Item HARVESTER = registerItem("harvester", new HarvesterItem(new Item.Settings().maxDamage(32)));
-    public static final Item BLUNT = registerItem("blunt", new BluntItem(new Item.Settings()
-            .component(ModDataComponentTypes.STRAIN, "")));
+    public static final Item BLUNT = registerItem("blunt",
+            new BluntItem(new Item.Settings()
+                    .component(ModDataComponentTypes.CONSUMABLE_DRUG, ConsumableDrugComponents.GRANDADDY_PURPLE_BLUNT)
+                    .component(ModDataComponentTypes.STRAIN, "")));
+
     public static final Item BONG = registerItem("bong", new BongItem(new Item.Settings()));
     public static final Item GRANDADDY_PURPLE_GROUNDS = registerItem("grandaddy_purple_grounds", new Item(new Item.Settings()));
     public static final Item PREROLL = registerItem("preroll", new PrerollItem(new Item.Settings()));

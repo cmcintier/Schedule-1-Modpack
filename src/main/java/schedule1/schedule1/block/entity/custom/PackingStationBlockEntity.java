@@ -129,7 +129,8 @@ public class PackingStationBlockEntity extends BlockEntity implements Implemente
         Optional<RecipeEntry<PackingStationRecipe>> recipe = getCurrentRecipe();
 
         ItemStack output = recipe.get().value().output();
-        this.removeStack(PRODUCT_INPUT_SLOT, 3);
+        this.removeStack(PRODUCT_INPUT_SLOT, 1);
+        this.removeStack(PACKAGING_INPUT_SLOT, 1);
         this.setStack(OUTPUT_SLOT, new ItemStack(output.getItem(),
                 this.getStack(OUTPUT_SLOT).getCount() + output.getCount()));
     }
